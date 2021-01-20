@@ -1,0 +1,11 @@
+/* Подклюсил normalize.css */
+@import url("../vendor/normalize.css");
+
+/* Подключил шрифты */
+@import url("../vendor/inter.css");
+
+/* Блок root */
+@import url("../blocks/root/root.css");
+
+/* Блок header */
+@import url("../blocks/header/header.css");

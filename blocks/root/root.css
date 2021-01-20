@@ -1,0 +1,16 @@
+.root {
+  max-width: 1600px;
+  margin: auto;
+  /* Максимальная ширина для больших экранов и центрирование контента в root */
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+  /* Основной цвет текста на всей странице белый */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  /* Сглаживание шрифтов */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  /* Изменение размера шрифта пропорционально масшатбу страницы */
+}
