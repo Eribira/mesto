@@ -12,25 +12,38 @@
 
 /* Блок profile */
 @import url("../blocks/profile/profile.css");
-/* Элемент avatar */
+/* Элемент __avatar */
 @import url("../blocks/profile/__avatar/profile__avatar.css");
-/* Элемент profile__profile-info */
+/* Элемент __profile-info */
 @import url("../blocks/profile/__profile-info/profile__profile-info.css");
-/* Элемент profile__name */
+/* Элемент __name */
 @import url("../blocks/profile/__name/profile__name.css");
-/* Элемент profile__capture */
+/* Элемент __capture */
 @import url("../blocks/profile/__capture/profile__capture.css");
-/* Элемент profile__edit-button  */
+/* Элемент __edit-button  */
 @import url("../blocks/profile/__edit-button/profile__edit-button.css");
-/* Элемент profile__add-button */
+/* Элемент __add-button */
 @import url("../blocks/profile/__add-button/profile__add-button.css");
 
-
-
+/* Блок elements */
+@import url("../blocks/elements/elements.css");
+/* Элемент __item */
+@import url("../blocks/elements/__item/elements__item.css");
+/* Элемент __photo */
+@import url("../blocks/elements/__photo/elements__photo.css");
+/* Элемент __capture */
+@import url("../blocks/elements/__capture/elements__capture.css");
+/* Элемент __text*/
+@import url("../blocks/elements/__text/elements__text.css");
+/* Элемент __like-button*/
+@import url("../blocks/elements/__like-button/elements__like-button.css");
+/* Блок footer */
+@import url("../blocks/footer/footer.css");
+/* Элемент footer__copyright */
+@import url("../blocks/footer/__copyright/footer__copyright.css");
+/* Элемент */
 @import url("");
-
-@import url("");
-
+/* Элемент */
 @import url("");
 
 
