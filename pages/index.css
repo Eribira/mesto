@@ -9,3 +9,34 @@
 
 /* Блок header */
 @import url("../blocks/header/header.css");
+
+/* Блок profile */
+@import url("../blocks/profile/profile.css");
+/* Элемент avatar */
+@import url("../blocks/profile/__avatar/profile__avatar.css");
+/* Элемент profile__profile-info */
+@import url("../blocks/profile/__profile-info/profile__profile-info.css");
+/* Элемент profile__name */
+@import url("../blocks/profile/__name/profile__name.css");
+/* Элемент profile__capture */
+@import url("../blocks/profile/__capture/profile__capture.css");
+/* Элемент profile__edit-button  */
+@import url("../blocks/profile/__edit-button/profile__edit-button.css");
+/* Элемент profile__add-button */
+@import url("../blocks/profile/__add-button/profile__add-button.css");
+
+
+
+@import url("");
+
+@import url("");
+
+@import url("");
+
+
+/* Вероятно, лишний css. Не забыть удалить */
+
+/* Элемент profile__edit-button-icon */
+@import url("../blocks/profile/__edit-button-icon/profile__edit-button-icon.css");
+/* Элемент __add-button-icon */
+@import url("../blocks/profile/__add-button-icon/profile__add-button-icon.css");

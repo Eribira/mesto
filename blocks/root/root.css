@@ -1,7 +1,8 @@
 .root {
   max-width: 1600px;
-  margin: auto;
-  /* Максимальная ширина для больших экранов и центрирование контента в root */
+    /* Максимальная ширина для больших экранов */
+  width: 80%;
+  margin: 0 auto;
   font-family: 'Inter', Arial, sans-serif;
   background-color: #000000;
   color: #FFFFFF;

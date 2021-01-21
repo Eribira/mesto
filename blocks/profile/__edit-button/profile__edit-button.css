@@ -1,0 +1,10 @@
+.profile__edit-button {
+  width: 24px;
+  height: 24px;
+    /* Пока что задаю строгую высоту. Далее подумаю над относительными величинами */
+  margin-left: 18px;
+  margin-right: auto;
+  border: 1px solid #ffffff;
+  background-color: #000000;
+  padding: 0;
+}
