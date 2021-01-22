@@ -7,4 +7,17 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  /* border: solid 1px yellow; */
 }
+
+@media screen and (max-width: 425px) {
+  .profile__capture {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    /* margin-right: 28px; */
+    margin-top: 14px;
+    max-width: 190px;
+  }
+}
+

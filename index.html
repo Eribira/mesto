@@ -16,17 +16,19 @@
     <section class="profile">
       <img src="./images/Avatar.png" alt="аватар пользователя" class="profile__avatar">
       <div class="profile__profile-info">
-        <p class="profile__name">
-          Жак-Ив Кусто
-        </p>
+        <!-- Контейнер для размещения кнопки флексами -->
+        <div class="profile__row-contaner">
+          <p class="profile__name">
+            Жак-Ив Кусто
+          </p>
+          <button class="profile__edit-button">
+            <svg class="profile__edit-button-icon" width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.328L2.604 8.767 1.283 7.419 8.66 0 10 1.328zM0 10l1.962-.588L.585 8.083 0 10z" fill="#fff"/></svg>
+          </button>
+        </div>
         <p class="profile__capture">
           Исследователь океана
         </p>
       </div>
-
-      <button class="profile__edit-button">
-        <svg class="profile__edit-button-icon" width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.328L2.604 8.767 1.283 7.419 8.66 0 10 1.328zM0 10l1.962-.588L.585 8.083 0 10z" fill="#fff"/></svg>
-      </button>
 
       <button class="profile__add-button">
         <svg class="profile__add-button-icon" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 9.778h-9.778V0H9.778v9.778H0v2.444h9.778V22h2.444v-9.778H22V9.778z" fill="#fff"/></svg>
@@ -95,23 +97,43 @@
           </button>
         </div>
       </div>
-      <!-- Карачаево-Ч... -->
+      <!-- Карачаево-Черкессия -->
       <div class="elements__item">
         <img src="./images/elements__item-karachaevsk.png" alt="" class="elements__photo">
         <div class="elements__capture">
           <p class="elements__text">
-            Карачаево-Ч...
+            Карачаево-Черкессия
           </p>
           <button class="elements__like-button">
             <svg class="elements__like-button-icon" width="22" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3 9.786c2.267-2.243 2.267-5.884 0-8.104-2.269-2.243-5.951-2.243-8.22 0l-1.1 1.11-1.1-1.088C7.612-.56 3.93-.56 1.684 1.682A5.657 5.657 0 000 5.745a5.75 5.75 0 001.684 4.063L10.98 19l9.32-9.214zM1.436 5.745c0-1.155.45-2.22 1.28-3.02A4.33 4.33 0 015.771 1.46c1.1 0 2.2.422 3.054 1.265l2.155 2.11 2.156-2.132c1.684-1.665 4.446-1.665 6.108 0 .808.8 1.28 1.865 1.28 3.02 0 1.154-.45 2.22-1.28 3.02l-8.264 8.192-8.263-8.17c-.808-.822-1.28-1.888-1.28-3.02z" fill="#000"/></svg>
           </button>
         </div>
       </div>
-
     </section>
   </main>
   <!-- Подвал -->
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
+
+      <!-- Модуль оверлея с попапом -->
+      <section class="overlay overlay_display_none">
+        <div class="overlay__popup">
+          <p class="overlay__text">
+            Редактировать профиль
+          </p>
+          <form action="input" class="overlay__form">
+            <fieldset class="overlay__profile-info">
+              <input type="text" class="overlay__input overlay__input_item_name">
+              <input type="text" class="overlay__input overlay__input_item_capture">
+            </fieldset>
+          </form>
+          <button type="submit" class="overlay__subbmit-button"></button>
+          <button class="overlay__close-button">
+            <svg width="58" height="58" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M41.57 13.287L29 25.857l-12.57-12.57-3.143 3.142L25.857 29l-12.57 12.57 3.142 3.144L29 32.143l12.57 12.57 3.144-3.142L32.143 29l12.57-12.57-3.142-3.143z" fill="#fff"/></svg>
+          </button>
+        </div>
+      </section>
+<script src="index.js"></script>
 </body>
+

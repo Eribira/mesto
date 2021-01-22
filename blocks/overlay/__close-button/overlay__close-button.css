@@ -1,0 +1,7 @@
+.overlay__close-button {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  right: -55px;
+  top: -50px
+}

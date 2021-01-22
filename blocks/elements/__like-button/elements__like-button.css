@@ -1,4 +1,6 @@
 .elements__like-button {
   padding: 0;
   border: none;
+  margin-left: 4px;
+  /* Чтобы кнопка не оказалась прижата к тексту в некоторые моменты сжатия страницы */
 }

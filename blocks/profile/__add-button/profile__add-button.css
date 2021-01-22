@@ -1,8 +1,27 @@
 .profile__add-button {
-  width: 150px;
+  /* max-width: 150px; */
+  min-width: 50px;
+  width: 15%;
+  /* Позволяет кнопке плавно уменьшаться при сжатии страницы, хоть на контрольной точке и не совпадает пиксель в пиксель, но укладывается в допустимую по чек-листу разницу */
   height: 50px;
-  /* Пока что задаю строгую высоту. Далее подумаю над относительными величинами */
+  /* Пока что задаю строгую высоту. Не думаю, что здесь необходима относительная величина */
   border: 1px solid #ffffff;
   background-color: #000000;
   padding: 0;
+  margin-left: 25px;
+  /* Чтобы при сжатии кнопка не прижалась к кнопке редактирования */
+}
+
+/* @media screen and (max-width: 900px) {
+  .profile__add-button {
+    width: 15%;
+  }
+} */
+
+@media screen and (max-width: 425px) {
+  .profile__add-button {
+    margin-left: 0;
+    margin-top: 36px;
+    width: 100%;
+  }
 }
