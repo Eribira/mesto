@@ -65,12 +65,5 @@
 /* Элемент __close-button*/
 @import url("../blocks/overlay/__close-button/overlay__close-button.css");
 /*  */
-@import url("");
 
 
-/* Вероятно, лишний css. Не забыть удалить */
-
-/* Элемент __edit-button-icon */
-@import url("../blocks/profile/__edit-button-icon/profile__edit-button-icon.css");
-/* Элемент __add-button-icon */
-@import url("../blocks/profile/__add-button-icon/profile__add-button-icon.css");
