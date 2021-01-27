@@ -1,6 +1,6 @@
 .overlay__popup {
-  width: 430px;
-  height: 330px;
+  max-width: 430px;
+  min-height: 330px;
   background-color: #fff;
   border-radius: 10px;
   left: 50%;
@@ -11,4 +11,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+@media screen and (max-width: 470px) {
+  .overlay__popup {
+    max-width: 282px;
+    min-height: 323px;
+  }
 }

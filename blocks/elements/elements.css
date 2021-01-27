@@ -17,5 +17,6 @@
 @media screen and (max-width: 425px) {
   .elements {
     grid-template-columns: 1fr;
+    width: 90%;
   }
 }

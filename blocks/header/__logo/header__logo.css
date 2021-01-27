@@ -3,3 +3,7 @@
   max-height: 33px;
   background-size: 100%;
 }
+
+@media screen and (max-width: 425px) {
+  
+}

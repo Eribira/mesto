@@ -1,6 +1,29 @@
+.elements__like-button:focus {
+  outline: none;
+}
+
+.elements__like-button:active {
+  outline: none;
+  background-image: url("../../../images/like-button-icon_active.svg");
+}
+
+.elements__like-button:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
 .elements__like-button {
   padding: 0;
   border: none;
-  margin-left: 4px;
+  margin-left: 8px;
   /* Чтобы кнопка не оказалась прижата к тексту в некоторые моменты сжатия страницы */
+  background-image: url("../../../images/like-button-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-width: 22px;
+  min-height: 19px;
+  background-color: #fff;
+  transition: all linear 0.6s;
 }
+

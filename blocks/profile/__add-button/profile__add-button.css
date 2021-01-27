@@ -1,15 +1,32 @@
+.profile__add-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.profile__add-button:active,
+.profile__add-button:focus {
+  outline: none;
+}
+
 .profile__add-button {
   /* max-width: 150px; */
   min-width: 50px;
+  /* Чтобы при сжатии кнопка осталась на минимальной ширине */
   width: 15%;
   /* Позволяет кнопке плавно уменьшаться при сжатии страницы, хоть на контрольной точке и не совпадает пиксель в пиксель, но укладывается в допустимую по чек-листу разницу */
-  height: 50px;
-  /* Пока что задаю строгую высоту. Не думаю, что здесь необходима относительная величина */
+  min-height: 50px;
+  /* Думаю, для кнопки можно сделать и строгую высоту */
   border: 1px solid #ffffff;
   background-color: #000000;
   padding: 0;
   margin-left: 25px;
   /* Чтобы при сжатии кнопка не прижалась к кнопке редактирования */
+  transition: opacity linear .5s;
+  background-image: url("../../../images/add-button-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* color: #fff; */
+  /* font-size: 40px; */
 }
 
 /* @media screen and (max-width: 900px) {

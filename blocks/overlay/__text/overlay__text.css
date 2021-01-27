@@ -7,3 +7,13 @@
   margin: 34px auto 0;
   min-width: 358px;
 }
+
+@media screen and (max-width: 470px) {
+  .overlay__text {
+    min-width: 238px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
