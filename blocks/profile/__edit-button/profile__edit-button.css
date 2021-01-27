@@ -3,6 +3,11 @@
   cursor: pointer;
 }
 
+.profile__edit-button:focus,
+.profile__edit-button:active {
+  outline: none;
+}
+
 .profile__edit-button {
   min-width: 24px;
   height: 24px;
