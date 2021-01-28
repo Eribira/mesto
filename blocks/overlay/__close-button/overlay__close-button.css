@@ -18,7 +18,17 @@
   background-image: url("../../../images/Close-Icon.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   min-width: 40px;
   min-height: 40px;
   padding: 0;
+}
+
+@media screen and (max-width: 520px) {
+.overlay__close-button  {
+  right: 0;
+  top: -40px;
+  min-height: 35px;
+  min-width: 35px;
+}
 }

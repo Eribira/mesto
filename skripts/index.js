@@ -2,7 +2,7 @@ let overlay = document.querySelector('.overlay'); // Объявил оверле
 let openButton = document.querySelector('.profile__edit-button'); // Объявил кнопку открытия попапа
 let closeButton = document.querySelector('.overlay__close-button'); // Объявил кнопку закрытия попапа
 
-let formElement = document.querySelector('.overlay__form');
+let formElement = document.querySelector('.overlay__popup');
 let nameInput = document.querySelector('.overlay__input_item_name');
 let captureInput = document.querySelector('.overlay__input_item_capture'); // Объявил элементы для формы и полей ввода формы.
 
@@ -22,7 +22,6 @@ function closeOverlay() {
 }
 
 closeButton.addEventListener('click', closeOverlay); // Аналогично предыдущему "слушателю"
-
 
 function formSubmitHandler(evt) {
   evt.preventDefault();

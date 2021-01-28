@@ -8,4 +8,6 @@
   border-radius: 0 0 10px 10px;
   /* tl - tr - br - bl | Не уверен нужно ли и можно ли использовать тут что-то еще кроме px для радиуса*/
   overflow: hidden;
+  margin: 0;
+  box-sizing: content-box;
 }

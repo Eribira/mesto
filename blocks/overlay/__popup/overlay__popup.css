@@ -1,21 +1,23 @@
 .overlay__popup {
-  max-width: 430px;
+  margin: 15vh auto;
+  min-width: 430px;
   min-height: 330px;
   background-color: #fff;
   border-radius: 10px;
-  left: 50%;
+  /* left: 50%; */
   /* top: 10%; */
-  transform: translate(-50%, 50%);
+  /* transform: translate(-50%, 50%);*/
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 520px) {
   .overlay__popup {
-    max-width: 282px;
+    min-width: 282px;
+    width: 90%;
     min-height: 323px;
   }
 }
