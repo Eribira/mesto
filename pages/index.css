@@ -50,8 +50,6 @@
 @import url("../blocks/overlay/__popup/overlay__popup.css");
 /* Элемент __text*/
 @import url("../blocks/overlay/__text/overlay__text.css");
-/* Элемент __form*/
-@import url("../blocks/overlay/__form/overlay__form.css");
 /* Элемент __profile-info*/
 @import url("../blocks/overlay/__profile-info/overlay__profile-info.css");
 /* Элемент __input*/

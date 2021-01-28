@@ -1,4 +1,7 @@
 .elements__item {
   width: 100%;
   overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
