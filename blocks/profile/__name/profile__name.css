@@ -7,6 +7,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  /* min-width: 300px; */
   /* border: solid 1px red; */
 }
 
@@ -15,7 +16,9 @@
     font-size: 27px;
     line-height: 33px;
     text-align: center;
-    max-width: 190px;
+    min-width: 190px;
+    /* max-width: 200px; */
     margin-top: 26px;
+    grid-row: 1;
   }
 }

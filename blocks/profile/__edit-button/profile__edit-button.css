@@ -27,10 +27,12 @@
   .profile__edit-button {
     min-width: 18px;
     height: 18px;
-    margin: 0;
-    position: absolute;
+    grid-row: 1;
+    align-self: center;
+    margin: 26px 0 0 10px;
+    /*position: absolute;
     top: 50%;
     transform: translatey(-50%);
-    right: -30px;
+    right: -25px; */
   }
 } 
