@@ -1,4 +1,4 @@
-.overlay__popup {
+.popup__contaner {
   margin: 15vh auto;
   min-width: 430px;
   min-height: 330px;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 520px) {
-  .overlay__popup {
+  .popup__contaner {
     min-width: 282px;
     width: 90%;
     min-height: 323px;

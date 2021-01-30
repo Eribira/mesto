@@ -1,15 +1,17 @@
 .profile__profile-info {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* flex-direction: column; */
   margin-left: 30px;
   margin-right: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* border: solid 1px gray; */
 }
 
 @media screen and (max-width: 425px) {
   .profile__profile-info {
-    margin: 26px 0 0 28px;
-  /* Левый марджин компенсирует кнопку справа, делая текст по центру. Похоже на костыль, чтобы не делать кнопку абсолютным позиционированием */
-  }
-}
+    grid-template-columns: 1fr;
+    margin: auto;
+    position: relative;
+   }
+} 

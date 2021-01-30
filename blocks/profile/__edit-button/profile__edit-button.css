@@ -10,8 +10,7 @@
 
 .profile__edit-button {
   min-width: 24px;
-  height: 24px;
-    /* Пока что задаю строгую высоту. Не думаю, что здесь нужна относительная величина. */
+  height: 24px; 
   margin-left: 18px;
   margin-right: auto;
   border: 1px solid #ffffff;
@@ -21,12 +20,17 @@
   background-image: url("../../../images/edit-button-icon.svg");
   background-repeat: no-repeat;
   background-position: center;
+  align-self: center;
 }
 
 @media screen and (max-width: 425px) {
   .profile__edit-button {
     min-width: 18px;
     height: 18px;
-    margin-left: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    right: -30px;
   }
-}
+} 

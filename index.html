@@ -17,12 +17,18 @@
   <!-- Блок с профилем -->
     <section class="profile">
       <img src="./images/Avatar.png" alt="аватар пользователя" class="profile__avatar">
-      <div class="profile__profile-info">
-        <!-- Контейнер для размещения кнопки флексами -->
+
+      <!-- <div class="profile__profile-info">
         <div class="profile__row-contaner">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit-button"></button>
         </div>
+        <p class="profile__capture">Исследователь океана</p>
+      </div> -->
+
+      <div class="profile__profile-info">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit-button"></button>
         <p class="profile__capture">Исследователь океана</p>
       </div>
 
@@ -99,17 +105,17 @@
   </footer>
 
   <!-- Модуль попапа -->
-  <section class="overlay overlay_display_none">
-    <form action="input" class="overlay__popup">
-      <p class="overlay__text">
+  <section class="popup">
+    <form action="input" class="popup__contaner">
+      <p class="popup__text">
         Редактировать профиль
       </p> 
-      <fieldset class="overlay__profile-info">
-        <input type="text" class="overlay__input overlay__input_item_name"> 
-        <input type="text" class="overlay__input overlay__input_item_capture">
+      <fieldset class="popup__profile-info">
+        <input type="text" class="popup__input popup__input_item_name"> 
+        <input type="text" class="popup__input popup__input_item_capture">
       </fieldset>
-      <button type="submit" class="overlay__submit-button">Сохранить</button>
-      <button type="reset" class="overlay__close-button"></button>
+      <button type="submit" class="popup__submit-button">Сохранить</button>
+      <button type="reset" class="popup__close-button"></button>
     </form>
   </section>
   
