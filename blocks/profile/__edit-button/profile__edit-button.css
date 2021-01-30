@@ -10,7 +10,7 @@
 
 .profile__edit-button {
   min-width: 24px;
-  height: 24px; 
+  height: 24px;
   margin-left: 18px;
   margin-right: auto;
   border: 1px solid #ffffff;
@@ -35,4 +35,4 @@
     transform: translatey(-50%);
     right: -25px; */
   }
-} 
+}
