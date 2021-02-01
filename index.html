@@ -10,7 +10,7 @@
 <body class="root">
   <!-- Шапка сайта -->
   <header class="header">
-    <img src="./images/logo.png" alt="логотип сайта mesto Russia" class="header__logo">
+    <img src="./images/logo.svg" alt="логотип сайта mesto Russia" class="header__logo">
   </header>
   <!-- Основное содержание сайта -->
   <main class="content">
@@ -21,18 +21,18 @@
       <!-- <div class="profile__profile-info">
         <div class="profile__row-contaner">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button"></button>
+          <button type="button" class="profile__edit-button"></button>
         </div>
         <p class="profile__capture">Исследователь океана</p>
       </div> -->
 
       <div class="profile__profile-info">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <button class="profile__edit-button"></button>
+        <button type="button" aria-label="edit" class="profile__edit-button"></button>
         <p class="profile__capture">Исследователь океана</p>
       </div>
 
-      <button class="profile__add-button"></button>
+      <button type="button" aria-label="add" class="profile__add-button"></button>
     </section>
     <!-- Блок с карточками мест -->
     <section class="elements">
@@ -40,61 +40,61 @@
       <figure class="elements__item">
         <img src="./images/elements__item-karachaevsk.png" alt="фото заброшенной церкви" class="elements__photo">
         <figcaption class="elements__capture">
-          <p class="elements__text">
+          <h2 class="elements__text">
             Карачаевск
-          </p>
+          </h2>
           <!-- Возможно, стоит сделать h2 вместо p для улучшения семантики и не уверен, что стоит оборачивать кнопку в figcapture -->
-          <button class="elements__like-button"></button>
+          <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
       </figure>
       <!-- Эльбрус -->
       <figure class="elements__item">
         <img src="./images/elements__item-elbrus.png" alt="фото горы Эльбрус" class="elements__photo">
         <figcaption class="elements__capture">
-          <p class="elements__text">
+          <h2 class="elements__text">
             Гора Эльбрус
-          </p>
-          <button class="elements__like-button"></button>
+          </h2>
+          <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
       </figure>
       <!-- Домбай -->
       <figure class="elements__item">
         <img src="./images/elements__item-dombau.png" alt="фото горы Домбай" class="elements__photo">
         <figcaption class="elements__capture">
-          <p class="elements__text">
+          <h2 class="elements__text">
             Домбай
-          </p>
-          <button class="elements__like-button"></button>
+          </h2>
+          <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
       </figure>
       <!-- Эльбрус-2 -->
       <figure class="elements__item">
         <img src="./images/elements__item-elbrus.png" alt="фото горы Эльбрус" class="elements__photo">
         <figcaption class="elements__capture">
-          <p class="elements__text">
+          <h2 class="elements__text">
             Гора Эльбрус
-          </p>
-          <button class="elements__like-button"></button>
+          </h2>
+          <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
       </figure>
       <!-- Домбай-2 -->
       <figure class="elements__item">
         <img src="./images/elements__item-dombau.png" alt="фото горы Домбай" class="elements__photo">
         <figcaption class="elements__capture">
-          <p class="elements__text">
+          <h2 class="elements__text">
             Домбай
-          </p>
-          <button class="elements__like-button"></button>
+          </h2>
+          <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
       </figure>
       <!-- Карачаево-Черкессия -->
       <figure class="elements__item">
         <img src="./images/elements__item-karachaevsk.png" alt="фото заброшенного храма" class="elements__photo">
         <figcaption class="elements__capture">
-          <p class="elements__text">
+          <h2 class="elements__text">
             Карачаево-Черкессия
-          </p>
-          <button class="elements__like-button"></button>
+          </h2>
+          <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
       </figure>
     </section>
@@ -106,16 +106,16 @@
 
   <!-- Модуль попапа -->
   <section class="popup">
-    <form action="input" class="popup__contaner">
-      <p class="popup__text">
+    <form action="input" class="popup__contaner" name="profile-info">
+      <h2 class="popup__text">
         Редактировать профиль
-      </p> 
+      </h2>
       <fieldset class="popup__profile-info">
         <input type="text" class="popup__input popup__input_item_name"> 
         <input type="text" class="popup__input popup__input_item_capture">
       </fieldset>
-      <button type="submit" class="popup__submit-button">Сохранить</button>
-      <button type="reset" class="popup__close-button"></button>
+      <button type="submit" aria-label="save" class="popup__submit-button">Сохранить</button>
+      <button type="reset" aria-label="close" class="popup__close-button"></button>
     </form>
   </section>
   
