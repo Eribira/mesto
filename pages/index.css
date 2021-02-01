@@ -9,6 +9,8 @@
 
 /* Блок header */
 @import url("../blocks/header/header.css");
+/* Элемент __logo */
+@import url("../blocks/header/__logo/header__logo.css");
 
 /* Блок profile */
 @import url("../blocks/profile/profile.css");

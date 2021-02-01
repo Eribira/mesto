@@ -9,5 +9,7 @@
 @media screen and (max-width: 425px) {
   .header {
     padding-left: 5%;
+    margin-top: 28px;
+    padding-bottom: 31px;
   }
 }

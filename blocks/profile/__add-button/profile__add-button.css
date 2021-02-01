@@ -37,5 +37,6 @@
     margin-left: 0;
     margin-top: 36px;
     width: 100%;
+    background-image: url("../../../images/add-button-icon-16px.svg");
   }
 }
