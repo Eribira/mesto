@@ -54,10 +54,6 @@
 @import url("../blocks/popup/__profile-info/popup__profile-info.css");
 /* Элемент __input*/
 @import url("../blocks/popup/__input/popup__input.css");
-/* Модификатор _item_name*/
-@import url("../blocks/popup/__input/_item/popup__input_item_name.css");
-/* Модификатор _item_capture*/
-@import url("../blocks/popup/__input/_item/popup__input_item_capture.css");
 /* Элемент __submit-button*/
 @import url("../blocks/popup/__submit-button/popup__submit-button.css");
 /* Элемент __close-button*/

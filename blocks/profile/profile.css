@@ -6,19 +6,10 @@
   justify-content: flex-start;
 }
 
-/* .profile__row-contaner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-} */
 
 @media screen and (max-width: 425px) {
   .profile {
     flex-direction: column;
     width: 90%;
-    /* position: relative; */
   }
 } 

@@ -21,3 +21,8 @@
   padding: 0;
 }
 
+@media screen and (max-width: 520px) {
+  .popup__submit-button {
+    margin-top: 45px;
+  }
+}

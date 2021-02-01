@@ -1,6 +1,6 @@
 .profile__profile-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   width: 100%;
   /* flex-direction: column; */
   margin-left: 30px;
@@ -9,11 +9,11 @@
   /* border: solid 1px gray; */
 }
 
+
 @media screen and (max-width: 425px) {
   .profile__profile-info {
+    max-width: 200px;
     grid-template-columns: 1fr;
     margin: auto;
-    /* position: relative; */
-    max-width: 200px;
    }
 } 

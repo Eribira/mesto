@@ -7,9 +7,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  /* min-width: 300px; */
+  grid-row: 1;
   /* border: solid 1px red; */
 }
+
+
 
 @media screen and (max-width: 425px) {
   .profile__name {
