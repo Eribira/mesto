@@ -10,11 +10,16 @@
   /* border: solid 1px yellow; */
 }
 
+@media screen and (max-width: 768px) {
+  .profile__capture {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .profile__capture {
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
     margin-top: 14px;
     /* max-width: 200px; */
   }

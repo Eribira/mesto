@@ -11,16 +11,19 @@
   /* border: solid 1px red; */
 }
 
-
+@media screen and (max-width: 768px) {
+  .profile__name {
+    grid-row: 1;
+    text-align: center;
+    margin-top: 26px;
+  }
+}
 
 @media screen and (max-width: 425px) {
   .profile__name {
     font-size: 27px;
     line-height: 33px;
-    text-align: center;
     min-width: 190px;
     /* max-width: 200px; */
-    margin-top: 26px;
-    grid-row: 1;
   }
 }

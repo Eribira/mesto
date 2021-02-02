@@ -22,14 +22,19 @@
   background-position: center;
   align-self: center;
   grid-row: 1;
+}
 
+@media screen and (max-width: 768px) {
+  .profile__edit-button {
+    grid-row: 1;
+    margin-top: 26px;
+  }
 }
 
 @media screen and (max-width: 425px) {
   .profile__edit-button {
     min-width: 18px;
     height: 18px;
-    grid-row: 1;
     margin: 26px 0 0 10px;
   }
 }

@@ -9,11 +9,16 @@
   /* border: solid 1px gray; */
 }
 
+@media screen and (max-width: 768px) {
+  .profile__profile-info {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: auto;
+  }
+}
 
 @media screen and (max-width: 425px) {
   .profile__profile-info {
     max-width: 200px;
-    grid-template-columns: 1fr;
-    margin: auto;
    }
 } 

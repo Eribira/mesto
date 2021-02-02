@@ -33,7 +33,7 @@ function formSubmitHandler(evt) {
   profileName.textContent = nameInput.value;
   profileCapture.textContent = captureInput.value; // При помощи textContent перезаписывается на страницу то что сейчас введено в input
 
-  function closeOverlay() {} // Использую уже существующую функцию внутри новой
+  closeOverlay() // Использую уже существующую функцию внутри новой
   }
 
 // Обработчики

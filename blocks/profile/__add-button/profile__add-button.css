@@ -26,16 +26,15 @@
   /* font-size: 40px; */
 }
 
-/* @media screen and (max-width: 900px) {
-  .profile__add-button {
-    min-width: 50px;
-  }
-} */
-
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .profile__add-button {
     margin-left: 0;
     margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__add-button {
     width: 100%;
     background-image: url("../../../images/add-button-icon-16px.svg");
   }
