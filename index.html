@@ -37,17 +37,20 @@
     <!-- Блок с карточками мест -->
     <section class="elements">
       <!-- Карачаевск -->
-      <figure class="elements__item">
+
+      <!-- <article class="elements__item">
         <img src="./images/elements__item-karachaevsk.png" alt="фото заброшенной церкви" class="elements__photo">
-        <figcaption class="elements__capture">
+        <div class="elements__capture">
           <h2 class="elements__text">
             Карачаевск
           </h2>
           <button type="button" aria-label="like" class="elements__like-button"></button>
-        </figcaption>
-      </figure>
+        </div>
+      </article> -->
+
       <!-- Эльбрус -->
-      <figure class="elements__item">
+
+      <!-- <figure class="elements__item">
         <img src="./images/elements__item-elbrus.png" alt="фото горы Эльбрус" class="elements__photo">
         <figcaption class="elements__capture">
           <h2 class="elements__text">
@@ -55,9 +58,11 @@
           </h2>
           <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
-      </figure>
+      </figure> -->
+
       <!-- Домбай -->
-      <figure class="elements__item">
+
+      <!-- <figure class="elements__item">
         <img src="./images/elements__item-dombau.png" alt="фото горы Домбай" class="elements__photo">
         <figcaption class="elements__capture">
           <h2 class="elements__text">
@@ -65,9 +70,11 @@
           </h2>
           <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
-      </figure>
+      </figure> -->
+
       <!-- Эльбрус-2 -->
-      <figure class="elements__item">
+
+      <!-- <figure class="elements__item">
         <img src="./images/elements__item-elbrus.png" alt="фото горы Эльбрус" class="elements__photo">
         <figcaption class="elements__capture">
           <h2 class="elements__text">
@@ -75,9 +82,11 @@
           </h2>
           <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
-      </figure>
+      </figure> -->
+
       <!-- Домбай-2 -->
-      <figure class="elements__item">
+
+      <!-- <figure class="elements__item">
         <img src="./images/elements__item-dombau.png" alt="фото горы Домбай" class="elements__photo">
         <figcaption class="elements__capture">
           <h2 class="elements__text">
@@ -85,9 +94,11 @@
           </h2>
           <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
-      </figure>
+      </figure> -->
+
       <!-- Карачаево-Черкессия -->
-      <figure class="elements__item">
+
+      <!-- <figure class="elements__item">
         <img src="./images/elements__item-karachaevsk.png" alt="фото заброшенного храма" class="elements__photo">
         <figcaption class="elements__capture">
           <h2 class="elements__text">
@@ -95,7 +106,8 @@
           </h2>
           <button type="button" aria-label="like" class="elements__like-button"></button>
         </figcaption>
-      </figure>
+      </figure> -->
+
     </section>
   </main>
   <!-- Подвал -->
@@ -103,7 +115,7 @@
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <!-- Модуль попапа -->
+  <!-- Секция для попапов -->
   <section class="popup">
     <form action="input" class="popup__contaner" name="profile-info">
       <h2 class="popup__text">
@@ -117,7 +129,18 @@
       <button type="reset" aria-label="close" class="popup__close-button"></button>
     </form>
   </section>
-  
+
+  <!-- Разметка карточки места для вставки через js -->
+  <template class="elements-item-template">
+    <article class="elements__item">
+      <img src="" alt="" class="elements__photo">
+      <div class="elements__capture">
+        <h2 class="elements__text"></h2>
+        <button type="button" aria-label="like" class="elements__like-button"></button>
+      </div>
+    </article>
+  </template>
+
 <script src="./skripts/index.js"></script>
 </body>
 </html>
