@@ -46,7 +46,6 @@ const captureInputEl = document.querySelector('.popup__input_item_capture'); // 
 const profileNameEl = document.querySelector('.profile__name');
 const profileCaptureEl = document.querySelector('.profile__capture');
 
-
 const cardsContanerEl = document.querySelector('.elements'); // Контейнер для добавления карточек
 const templateCardEl = document.querySelector('.elements-item-template'); // Шаблон с html карточки
 
@@ -89,6 +88,10 @@ function addCard(card) {
   // Сослался на элементы в созданной карточке
   const cardTitle = newCard.querySelector('.elements__text');
   const cardImg = newCard.querySelector('.elements__photo');
+
+  const deleteBtn = newCard.querySelector('.elements__delete-button'); 
+  deleteBtn.addEventListener('click', deleteCard);
+
   // Заполнил контентом из массива новую карточку
   cardTitle.textContent = card.name;
   cardImg.src = card.link;
@@ -97,7 +100,12 @@ function addCard(card) {
   return newCard; // Функция используется в методе .map, которому нужно возвращать элемент для нового массива.
 }
 
+function deleteCard(event) {
+  const targetEl = event.target;
+  const targetItem = targetEl.closest('.elements__item');
 
+  targetItem.remove();
+}
 
 
 
@@ -108,6 +116,7 @@ openButtonEl.addEventListener('click', openOverlay); // Открытие popup
 // Повесил addEventListener на переменную openButton c аргументами click и openOverlay | openOverlay в аргементах - ранее объявленная функция
 closeButtonEl.addEventListener('click', closeOverlay); // Закрытие popup
 formElement.addEventListener('submit', formSubmitHandler); // Сохранение изменений данных профиля
+
 
 
 initialRender();
