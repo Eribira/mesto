@@ -39,6 +39,9 @@
 @import url("../blocks/elements/__text/elements__text.css");
 /* Элемент __like-button*/
 @import url("../blocks/elements/__like-button/elements__like-button.css");
+/* Элемент __delete-button */
+@import url("../blocks/elements/__delete-button/elements__delete-button.css");
+
 /* Блок footer */
 @import url("../blocks/footer/footer.css");
 /* Элемент footer__copyright */
