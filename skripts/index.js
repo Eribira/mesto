@@ -1,3 +1,4 @@
+
 const initialCards = [ // Массив с карточками
   {
     name: 'Архыз',
@@ -53,7 +54,7 @@ function openEditPopup() {
 }
 
 // Функция сохранения изменений данных профиля
-function formSubmitHandler(evt) {
+function editSubmitHandler(evt) {
   evt.preventDefault();
   
   profileNameEl.textContent = nameInputEl.value; // value для input - это содерживое строки ввода
@@ -69,13 +70,15 @@ function closeEditPopup() {
 
 // EventListener
 editButtonEl.addEventListener('click', openEditPopup); // Открытие popup редактирования
-editFormEl.addEventListener('submit', formSubmitHandler); // Сохранение изменений данных профиля
+editFormEl.addEventListener('submit', editSubmitHandler); // Сохранение изменений данных профиля
 closeEditPopupEl.addEventListener('click', closeEditPopup); // Закрытие popup
 
 // Элементы попап с добавлением карточки
 const addPopupEl = document.querySelector('.add-popup'); // Модуль попапа новой карточки
 const addButtonEl = document.querySelector('.profile__add-button'); // Кнопка открытия добавления
 const closeAddPopupEl = document.querySelector('.add-popup__close-button'); // Кнопка закрытия попап добавления
+
+const addFormEl = document.querySelector('.add-popup__contaner');
 
 // Функция открытия попап добавления карточек
 function openAddPopup() {
@@ -98,8 +101,28 @@ closeAddPopupEl.addEventListener('click', closeAddPopup);
 const cardsContanerEl = document.querySelector('.elements'); // Контейнер для добавления карточек
 const templateCardEl = document.querySelector('.elements-item-template'); // Шаблон с html карточки
 
-// Функция добавления карточек из темплейта
-function addCard(card) {
+const newPlaceNameEl = document.querySelector('.add-popup__input_item_place-name');
+const newPlaceLinkEl = document.querySelector('.add-popup__input_item_place-photo-link');
+// console.log(newPlaceLinkEl, newPlaceNameEl);
+function handleAdd(event) {
+  event.preventDefault();
+  const inputTitle = newPlaceNameEl.value;
+  const inputImg = newPlaceLinkEl.value;
+  const cardItem = addCard({name: inputTitle, link: inputImg, alt: inputTitle});
+
+  cardsContanerEl.prepend(cardItem);
+  newPlaceNameEl.value = '';
+  newPlaceLinkEl.value = '';
+  closeAddPopup();
+}
+
+
+// const addSubmitButton = document.querySelector('.add-popup__submit-button');
+// addSubmitButton.addEventListener('click', handleAdd);
+addFormEl.addEventListener('submit', handleAdd);
+
+
+function addCard(card) { // Создает карточку
   const newCard = templateCardEl.content.cloneNode(true); // Объявил локальную переменную newCard и придал ей значение равное контенту в теге template = создал новую пустую карточку
   // Сослался на элементы в созданной карточке
   const cardTitle = newCard.querySelector('.elements__text');
@@ -113,7 +136,7 @@ function addCard(card) {
   cardImg.src = card.link;
   cardImg.alt = card.alt;
 
-  return newCard; // Функция используется в методе .map, которому нужно возвращать элемент для нового массива.
+  return newCard; // Функция используется в методе .map, которому нужно возвращать элемент
 }
 
 function deleteCard(event) {
@@ -131,3 +154,4 @@ function initialRender() {
 }
 
 initialRender();
+
