@@ -1,0 +1,20 @@
+.edit-popup__contaner {
+  margin: 15vh auto;
+  padding-bottom: 37px;
+  min-width: 430px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 520px) {
+  .edit-popup__contaner {
+    padding-bottom: 25px;
+    min-width: 282px;
+    width: 90%;
+  }
+}

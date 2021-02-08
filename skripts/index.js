@@ -31,65 +31,81 @@ const initialCards = [ // Массив с карточками
   }
 ];
 
-// Объявленные переменные и DOM элементы
 
-// Элементы popup формы с редактированием профиля
-const overlayEl = document.querySelector('.popup_type_edit-profile'); // overlay
-const openButtonEl = document.querySelector('.profile__edit-button'); // Кнопка открытия popup
-const closeButtonEl = document.querySelector('.popup__close-button'); // Кнопка закрытия popup
-
-const formElement = document.querySelector('.popup__contaner'); // Элемент формы
-const nameInputEl = document.querySelector('.popup__input_item_name'); // Строка ввода имени
-const captureInputEl = document.querySelector('.popup__input_item_capture'); // Строка ввода для поля capture
-
+// Элементы popup с редактированием профиля
+const editPopupEl = document.querySelector('.edit-popup'); // Модуль попапа редактирования профиля
+const editButtonEl = document.querySelector('.profile__edit-button'); // Кнопка открытия редактирования профиля
+const closeEditPopupEl = document.querySelector('.edit-popup__close-button'); // Кнопка закрытия редактирования профиля
+// console.log(editPopupEl, editButtonEl, closeEditformEl);
+const editFormEl = document.querySelector('.edit-popup__contaner'); // Элемент формы редактироания профиля
+const nameInputEl = document.querySelector('.edit-popup__input_item_name'); // Строка ввода имени
+const captureInputEl = document.querySelector('.edit-popup__input_item_capture'); // Строка ввода для поля capture
+// console.log(editFormEl, nameInputEl, captureInputEl);
 // Элементы в секции profile, куда перезаписываются данные
 const profileNameEl = document.querySelector('.profile__name');
 const profileCaptureEl = document.querySelector('.profile__capture');
 
-const cardsContanerEl = document.querySelector('.elements'); // Контейнер для добавления карточек
-const templateCardEl = document.querySelector('.elements-item-template'); // Шаблон с html карточки
-
-// console.log(templateCardEl);
-
-// Функция открытия оверлея с попапом
-
-function openOverlay() { //"overlay" в функции - это объявленная ранее переменная в DOM | При методе classList точку перед именем класса ставить не нужно
-  overlayEl.classList.add('popup_opened'); // Метод classList.add добавляет модификатор, раскрывая оверлей с попапом
+// Функция открытия редактирования профиля
+function openEditPopup() {
+  editPopupEl.classList.add('edit-popup_opened'); // Метод classList.add добавляет модификатор, раскрывая оверлей с попапом
   nameInputEl.value = profileNameEl.textContent;
   captureInputEl.value = profileCaptureEl.textContent; // Эти две строки передают исходный текст с открывшуюся форму
 }
 
-// Функция закрытия оверлея с попапом
-
-function closeOverlay() {
-  overlayEl.classList.remove('popup_opened'); 
-}
-
 // Функция сохранения изменений данных профиля
-
 function formSubmitHandler(evt) {
   evt.preventDefault();
   
   profileNameEl.textContent = nameInputEl.value; // value для input - это содерживое строки ввода
   profileCaptureEl.textContent = captureInputEl.value; // При помощи textContent перезаписывается на страницу то что сейчас введено в input
 
-  closeOverlay() // Использую уже существующую функцию внутри новой, чтобы не дублировать код
+  closeEditPopup() // Использую уже существующую функцию внутри новой, чтобы не дублировать код
   }
 
-  function initialRender() {
-    const cards = initialCards // Объявил элемент cards, в который будут записываться данные после ремапа
-        .map(addCard);
-
-    cardsContanerEl.append(...cards); // И в метод append в качестве аргумента использую cards с опертором spread
+// Функция закрытия попапа редактирования
+function closeEditPopup() {
+  editPopupEl.classList.remove('edit-popup_opened');
 }
 
+// EventListener
+editButtonEl.addEventListener('click', openEditPopup); // Открытие popup редактирования
+editFormEl.addEventListener('submit', formSubmitHandler); // Сохранение изменений данных профиля
+closeEditPopupEl.addEventListener('click', closeEditPopup); // Закрытие popup
+
+// Элементы попап с добавлением карточки
+const addPopupEl = document.querySelector('.add-popup'); // Модуль попапа новой карточки
+const addButtonEl = document.querySelector('.profile__add-button'); // Кнопка открытия добавления
+const closeAddPopupEl = document.querySelector('.add-popup__close-button'); // Кнопка закрытия попап добавления
+
+// Функция открытия попап добавления карточек
+function openAddPopup() {
+  addPopupEl.classList.add('add-popup_opened');
+}
+
+// Функция закрытия попап добавления карточек
+function closeAddPopup() {
+  addPopupEl.classList.remove('add-popup_opened');
+}
+
+// EventListener
+addButtonEl.addEventListener('click', openAddPopup);
+closeAddPopupEl.addEventListener('click', closeAddPopup);
+
+// Элементы попап просмотра фото
+
+
+// Элементы добавления и удаления карточек
+const cardsContanerEl = document.querySelector('.elements'); // Контейнер для добавления карточек
+const templateCardEl = document.querySelector('.elements-item-template'); // Шаблон с html карточки
+
+// Функция добавления карточек из темплейта
 function addCard(card) {
   const newCard = templateCardEl.content.cloneNode(true); // Объявил локальную переменную newCard и придал ей значение равное контенту в теге template = создал новую пустую карточку
   // Сослался на элементы в созданной карточке
   const cardTitle = newCard.querySelector('.elements__text');
   const cardImg = newCard.querySelector('.elements__photo');
 
-  const deleteBtn = newCard.querySelector('.elements__delete-button'); 
+  const deleteBtn = newCard.querySelector('.elements__delete-button');
   deleteBtn.addEventListener('click', deleteCard);
 
   // Заполнил контентом из массива новую карточку
@@ -107,16 +123,11 @@ function deleteCard(event) {
   targetItem.remove();
 }
 
+function initialRender() {
+  const cards = initialCards // Объявил элемент cards, в который будут записываться данные после ремапа
+      .map(addCard);
 
-
-// Обработчики
-
-openButtonEl.addEventListener('click', openOverlay); // Открытие popup
-
-// Повесил addEventListener на переменную openButton c аргументами click и openOverlay | openOverlay в аргементах - ранее объявленная функция
-closeButtonEl.addEventListener('click', closeOverlay); // Закрытие popup
-formElement.addEventListener('submit', formSubmitHandler); // Сохранение изменений данных профиля
-
-
+  cardsContanerEl.append(...cards); // И в метод append в качестве аргумента использую cards с опертором spread
+}
 
 initialRender();
