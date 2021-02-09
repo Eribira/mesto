@@ -96,6 +96,27 @@ closeAddPopupEl.addEventListener('click', closeAddPopup);
 
 // Элементы попап просмотра фото
 
+const photoPopupEl = document.querySelector('.photo-popup');
+const photoEl = document.querySelector('.photo-popup__popup-photo');
+const photoTitleEl = document.querySelector('.photo-popup__title');
+
+function openPhoto(event) {
+  const targetEl = event.target;
+  const targetContaner = event.target.closest('.elements__item');
+  const targetTitle = targetContaner.querySelector('.elements__text');
+  // console.log(targetTitle);
+  photoPopupEl.classList.add('photo-popup_opened');
+  photoEl.src = targetEl.src;
+  photoTitleEl.textContent = targetTitle.textContent;
+}
+
+const closePhotoPopupEl = document.querySelector('.photo-popup__close-button');
+
+function closePhoto() {
+  photoPopupEl.classList.remove('photo-popup_opened');
+}
+
+closePhotoPopupEl.addEventListener('click', closePhoto);
 
 // Элементы добавления и удаления карточек
 const cardsContanerEl = document.querySelector('.elements'); // Контейнер для добавления карточек
@@ -116,11 +137,9 @@ function handleAdd(event) {
   closeAddPopup();
 }
 
-
 // const addSubmitButton = document.querySelector('.add-popup__submit-button');
 // addSubmitButton.addEventListener('click', handleAdd);
 addFormEl.addEventListener('submit', handleAdd);
-
 
 function addCard(card) { // Создает карточку
   const newCard = templateCardEl.content.cloneNode(true); // Объявил локальную переменную newCard и придал ей значение равное контенту в теге template = создал новую пустую карточку
@@ -131,7 +150,9 @@ function addCard(card) { // Создает карточку
   const deleteBtn = newCard.querySelector('.elements__delete-button');
   deleteBtn.addEventListener('click', deleteCard);
 
-  // Заполнил контентом из массива новую карточку
+  const openPhotoEl = newCard.querySelector('.elements__photo');
+  openPhotoEl.addEventListener('click', openPhoto);
+  // Заполняю контентом новую карточку
   cardTitle.textContent = card.name;
   cardImg.src = card.link;
   cardImg.alt = card.alt;

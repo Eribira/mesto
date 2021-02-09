@@ -89,6 +89,8 @@
 @import url("../blocks/photo-popup/_opened/photo-popup_opened.css");
 /* Элемент __contaner */
 @import url("../blocks/photo-popup/__contaner/photo-popup__contaner.css");
+/*  */
+@import url("../blocks/photo-popup/__popup__photo/photo-popup__popup-photo.css");
 /* Элемент __title */
 @import url("../blocks/photo-popup/__title/photo-popup__title.css");
 /* Элемент __close-button*/
