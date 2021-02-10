@@ -39,6 +39,8 @@
 @import url("../blocks/elements/__text/elements__text.css");
 /* Элемент __like-button*/
 @import url("../blocks/elements/__like-button/elements__like-button.css");
+/*  */
+@import url("../blocks/elements/__like-button/_active/elements__like-button_active.css");
 /* Элемент __delete-button */
 @import url("../blocks/elements/__delete-button/elements__delete-button.css");
 

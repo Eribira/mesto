@@ -152,6 +152,10 @@ function addCard(card) { // Создает карточку
 
   const openPhotoEl = newCard.querySelector('.elements__photo');
   openPhotoEl.addEventListener('click', openPhoto);
+
+  const LikeEl = newCard.querySelector('.elements__like-button');
+  LikeEl.addEventListener('click', likePhoto);
+
   // Заполняю контентом новую карточку
   cardTitle.textContent = card.name;
   cardImg.src = card.link;
@@ -165,6 +169,12 @@ function deleteCard(event) {
   const targetItem = targetEl.closest('.elements__item');
 
   targetItem.remove();
+}
+
+function likePhoto(event) {
+  const targetEl = event.target;
+  targetEl.classList.toggle('elements__like-button_active');
+
 }
 
 function initialRender() {

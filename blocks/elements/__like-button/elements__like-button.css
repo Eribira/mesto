@@ -2,11 +2,6 @@
   outline: none;
 }
 
-.elements__like-button:active {
-  outline: none;
-  background-image: url("../../../images/like-button-icon_active.svg");
-}
-
 .elements__like-button:hover {
   opacity: .5;
   cursor: pointer;
