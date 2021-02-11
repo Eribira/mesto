@@ -90,8 +90,6 @@ const addFormEl = document.querySelector('.add-popup__contaner'); // Add form El
 
 const addButtonEl = document.querySelector('.profile__add-button'); // Open button
 
-// Елементы input и все что связано с добавлением карточек, сгруппировано далее вместе с удалением карточек
-
 // Open popup
 function openAddPopup() {
   addPopupEl.classList.add('add-popup_opened');
@@ -203,6 +201,8 @@ function likePhoto(event) {
   const targetEl = event.target;
   targetEl.classList.toggle('elements__like-button_active');
 }
+
+
 
 function initialRender() {
   const cards = initialCards // Объявил элемент cards, в который будут записываться данные после ремапа
