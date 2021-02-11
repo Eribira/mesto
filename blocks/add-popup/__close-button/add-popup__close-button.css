@@ -1,14 +1,14 @@
-.popup__close-button:hover {
+.add-popup__close-button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.popup__close-button:active,
-.popup__close-button:focus {
+.add-popup__close-button:active,
+.add-popup__close-button:focus {
   outline: none;
 }
 
-.popup__close-button {
+.add-popup__close-button {
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -25,10 +25,10 @@
 }
 
 @media screen and (max-width: 520px) {
-.popup__close-button  {
+.add-popup__close-button  {
   right: 0;
   top: -40px;
   min-height: 35px;
   min-width: 35px;
-}
+  }
 }

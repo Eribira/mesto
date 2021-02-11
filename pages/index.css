@@ -39,27 +39,61 @@
 @import url("../blocks/elements/__text/elements__text.css");
 /* Элемент __like-button*/
 @import url("../blocks/elements/__like-button/elements__like-button.css");
+/*  */
+@import url("../blocks/elements/__like-button/_active/elements__like-button_active.css");
+/* Элемент __delete-button */
+@import url("../blocks/elements/__delete-button/elements__delete-button.css");
+
 /* Блок footer */
 @import url("../blocks/footer/footer.css");
 /* Элемент footer__copyright */
 @import url("../blocks/footer/__copyright/footer__copyright.css");
 
-/* Блок popup */
-@import url("../blocks/popup/popup.css");
+/* Блок edit-popup */
+@import url("../blocks/edit-popup/edit-popup.css");
 /* Модификатор popup_opened */
-@import url("../blocks/popup/_opened/popup_opened.css");
+@import url("../blocks/edit-popup/_opened/edit-popup_opened.css");
 /* Элемент __contaner */
-@import url("../blocks/popup/__contaner/popup__contaner.css");
+@import url("../blocks/edit-popup/__contaner/edit-popup__contaner.css");
 /* Элемент __text*/
-@import url("../blocks/popup/__text/popup__text.css");
-/* Элемент __profile-info*/
-@import url("../blocks/popup/__profile-info/popup__profile-info.css");
+@import url("../blocks/edit-popup/__text/edit-popup__text.css");
+/* Элемент __fieldset*/
+@import url("../blocks/edit-popup/__fieldset/edit-popup__fieldset.css");
 /* Элемент __input*/
-@import url("../blocks/popup/__input/popup__input.css");
+@import url("../blocks/edit-popup/__input/edit-popup__input.css");
 /* Элемент __submit-button*/
-@import url("../blocks/popup/__submit-button/popup__submit-button.css");
+@import url("../blocks/edit-popup/__submit-button/edit-popup__submit-button.css");
 /* Элемент __close-button*/
-@import url("../blocks/popup/__close-button/popup__close-button.css");
+@import url("../blocks/edit-popup/__close-button/edit-popup__close-button.css");
+
+/* Блок add-popup */
+@import url("../blocks/add-popup/add-popup.css");
+/* Модификатор popup_opened */
+@import url("../blocks/add-popup/_opened/add-popup_opened.css");
+/* Блок add-popup */
+@import url("../blocks/add-popup/_opened/add-popup_opened.css");
+/* Элемент __contaner */
+@import url("../blocks/add-popup/__contaner/add-popup__contaner.css");
+/* Элемент __text*/
+@import url("../blocks/add-popup/__text/add-popup__text.css");
+/* Элемент __fieldset*/
+@import url("../blocks/add-popup/__fieldset/add-popup__fieldset.css");
+/* Элемент __input*/
+@import url("../blocks/add-popup/__input/add-popup__input.css");
+/* Элемент __submit-button*/
+@import url("../blocks/add-popup/__submit-button/add-popup__submit-button.css");
+/* Элемент __close-button*/
+@import url("../blocks/add-popup/__close-button/add-popup__close-button.css");
+
+/* Блок photo-popup */
+@import url("../blocks/photo-popup/photo-popup.css");
+/* Модификатор popup_opened */
+@import url("../blocks/photo-popup/_opened/photo-popup_opened.css");
+/* Элемент __contaner */
+@import url("../blocks/photo-popup/__contaner/photo-popup__contaner.css");
 /*  */
-
-
+@import url("../blocks/photo-popup/__popup__photo/photo-popup__popup-photo.css");
+/* Элемент __title */
+@import url("../blocks/photo-popup/__title/photo-popup__title.css");
+/* Элемент __close-button*/
+@import url("../blocks/photo-popup/__close-button/photo-popup__close-button.css");

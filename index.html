@@ -18,14 +18,6 @@
     <section class="profile">
       <img src="./images/Avatar.png" alt="аватар пользователя" class="profile__avatar">
 
-      <!-- <div class="profile__profile-info">
-        <div class="profile__row-contaner">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-button"></button>
-        </div>
-        <p class="profile__capture">Исследователь океана</p>
-      </div> -->
-
       <div class="profile__profile-info">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
         <button type="button" aria-label="edit" class="profile__edit-button"></button>
@@ -36,77 +28,6 @@
     </section>
     <!-- Блок с карточками мест -->
     <section class="elements">
-      <!-- Карачаевск -->
-
-      <!-- <article class="elements__item">
-        <img src="./images/elements__item-karachaevsk.png" alt="фото заброшенной церкви" class="elements__photo">
-        <div class="elements__capture">
-          <h2 class="elements__text">
-            Карачаевск
-          </h2>
-          <button type="button" aria-label="like" class="elements__like-button"></button>
-        </div>
-      </article> -->
-
-      <!-- Эльбрус -->
-
-      <!-- <figure class="elements__item">
-        <img src="./images/elements__item-elbrus.png" alt="фото горы Эльбрус" class="elements__photo">
-        <figcaption class="elements__capture">
-          <h2 class="elements__text">
-            Гора Эльбрус
-          </h2>
-          <button type="button" aria-label="like" class="elements__like-button"></button>
-        </figcaption>
-      </figure> -->
-
-      <!-- Домбай -->
-
-      <!-- <figure class="elements__item">
-        <img src="./images/elements__item-dombau.png" alt="фото горы Домбай" class="elements__photo">
-        <figcaption class="elements__capture">
-          <h2 class="elements__text">
-            Домбай
-          </h2>
-          <button type="button" aria-label="like" class="elements__like-button"></button>
-        </figcaption>
-      </figure> -->
-
-      <!-- Эльбрус-2 -->
-
-      <!-- <figure class="elements__item">
-        <img src="./images/elements__item-elbrus.png" alt="фото горы Эльбрус" class="elements__photo">
-        <figcaption class="elements__capture">
-          <h2 class="elements__text">
-            Гора Эльбрус
-          </h2>
-          <button type="button" aria-label="like" class="elements__like-button"></button>
-        </figcaption>
-      </figure> -->
-
-      <!-- Домбай-2 -->
-
-      <!-- <figure class="elements__item">
-        <img src="./images/elements__item-dombau.png" alt="фото горы Домбай" class="elements__photo">
-        <figcaption class="elements__capture">
-          <h2 class="elements__text">
-            Домбай
-          </h2>
-          <button type="button" aria-label="like" class="elements__like-button"></button>
-        </figcaption>
-      </figure> -->
-
-      <!-- Карачаево-Черкессия -->
-
-      <!-- <figure class="elements__item">
-        <img src="./images/elements__item-karachaevsk.png" alt="фото заброшенного храма" class="elements__photo">
-        <figcaption class="elements__capture">
-          <h2 class="elements__text">
-            Карачаево-Черкессия
-          </h2>
-          <button type="button" aria-label="like" class="elements__like-button"></button>
-        </figcaption>
-      </figure> -->
 
     </section>
   </main>
@@ -115,19 +36,42 @@
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <!-- Секция для попапов -->
-  <section class="popup">
-    <form action="input" class="popup__contaner" name="profile-info">
-      <h2 class="popup__text">
+  <!-- Секции для попапов -->
+  <!-- Попап редактирования профиля -->
+  <section class="edit-popup">
+    <form action="input" class="edit-popup__contaner" name="profile-info">
+      <h2 class="edit-popup__text">
         Редактировать профиль
       </h2>
-      <fieldset class="popup__profile-info">
-        <input type="text" class="popup__input popup__input_item_name"> 
-        <input type="text" class="popup__input popup__input_item_capture">
+      <fieldset class="edit-popup__fieldset">
+        <input type="text" class="edit-popup__input edit-popup__input_item_name"> 
+        <input type="text" class="edit-popup__input edit-popup__input_item_capture">
       </fieldset>
-      <button type="submit" aria-label="save" class="popup__submit-button">Сохранить</button>
-      <button type="reset" aria-label="close" class="popup__close-button"></button>
+      <button type="submit" aria-label="save" class="edit-popup__submit-button">Сохранить</button>
+      <button type="reset" aria-label="close" class="edit-popup__close-button"></button>
     </form>
+  </section>
+  <!-- Попап добавления новой карточки -->
+  <section class="add-popup">
+    <form action="input" class="add-popup__contaner" name="new-place">
+      <h2 class="add-popup__text">
+        Новое место
+      </h2>
+      <fieldset class="add-popup__fieldset">
+        <input type="text" class="add-popup__input add-popup__input_item_place-name" placeholder="Название"> 
+        <input type="text" class="add-popup__input add-popup__input_item_place-photo-link" placeholder="Ссылка на картинку">
+      </fieldset>
+      <button type="submit" aria-label="save" class="add-popup__submit-button">Сохранить</button>
+      <button type="reset" aria-label="close" class="add-popup__close-button"></button>
+    </form>
+  </section>
+  <!-- Попап просмотра фото -->
+  <section class="photo-popup">
+    <figure class="photo-popup__contaner">
+      <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="" class="photo-popup__popup-photo">
+      <h2 class="photo-popup__title">Title</h2>
+      <button type="reset" aria-label="close" class="photo-popup__close-button"></button>
+    </figure>
   </section>
 
   <!-- Разметка карточки места для вставки через js -->
@@ -138,6 +82,7 @@
         <h2 class="elements__text"></h2>
         <button type="button" aria-label="like" class="elements__like-button"></button>
       </div>
+      <button type="button" class="elements__delete-button"></button>
     </article>
   </template>
 

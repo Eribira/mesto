@@ -1,0 +1,4 @@
+.elements__like-button_active {
+  outline: none;
+  background-image: url("../../../../images/like-button-icon_active.svg");
+}
