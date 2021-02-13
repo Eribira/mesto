@@ -37,7 +37,6 @@ const initialCards = [ // Массив с объектами для карточ
 // Function для нее же
 // Связанные обработчики
 
-
 // EDIT POPUP
 // Popup elements
 const editPopupEl = document.querySelector('.edit-popup'); // Popup
@@ -79,9 +78,6 @@ editButtonEl.addEventListener('click', openEditPopup); // For open
 editFormEl.addEventListener('submit', editSubmitHandler); // For edit submit
 closeEditPopupEl.addEventListener('click', closeEditPopup); // For close
 
-
-
-
 // ADD POPUP
 // Popup Element
 const addPopupEl = document.querySelector('.add-popup'); // Popup
@@ -103,9 +99,6 @@ function closeAddPopup() {
 // EventListener
 addButtonEl.addEventListener('click', openAddPopup); // Open
 closeAddPopupEl.addEventListener('click', closeAddPopup); // Close
-
-
-
 
 // PHOTO VIEW POPUP
 // Popup
@@ -133,9 +126,6 @@ function closePhoto() {
 // EventListener
 closePhotoPopupEl.addEventListener('click', closePhoto);
 
-
-
-
 // GET, ADD AND DELETE CARDS
 
 const cardsContanerEl = document.querySelector('.elements'); // Контейнер для добавления карточек
@@ -145,7 +135,7 @@ const newPlaceNameEl = document.querySelector('.add-popup__input_item_place-name
 const newPlaceLinkEl = document.querySelector('.add-popup__input_item_place-photo-link'); // Input El for Photo's Title
 
 // Get card
-function addCard(card) { // Создает карточку
+function createCard(card) { // Создает карточку
   const newCard = templateCardEl.content.cloneNode(true); // Объявил локальную переменную newCard и придал ей значение равное контенту в теге template = создал новую пустую карточку
   // Сослался на элементы в созданной карточке
   const cardTitle = newCard.querySelector('.elements__text');
@@ -171,11 +161,11 @@ function addCard(card) { // Создает карточку
 }
 
 // Handle add
-function handleAdd(event) {
+function handleAddCard(event) {
   event.preventDefault();
   const inputTitle = newPlaceNameEl.value;
   const inputImg = newPlaceLinkEl.value;
-  const cardItem = addCard({name: inputTitle, link: inputImg, alt: inputTitle}); // Передаю функции addCard объект с ключами, которые распознает функция
+  const cardItem = createCard({name: inputTitle, link: inputImg, alt: inputTitle}); // Передаю функции createCard объект с ключами, которые распознает функция
 
   cardsContanerEl.prepend(cardItem);
   newPlaceNameEl.value = '';
@@ -192,9 +182,7 @@ function deleteCard(event) {
 }
 
 // EventListener
-addFormEl.addEventListener('submit', handleAdd);
-
-
+addFormEl.addEventListener('submit', handleAddCard);
 
 // Like photo
 function likePhoto(event) {
@@ -202,14 +190,12 @@ function likePhoto(event) {
   targetEl.classList.toggle('elements__like-button_active');
 }
 
-
-
-function initialRender() {
+function renderInitialCards() {
   const cards = initialCards // Объявил элемент cards, в который будут записываться данные после ремапа
-      .map(addCard);
+      .map(createCard);
 
   cardsContanerEl.append(...cards); // И в метод append в качестве аргумента использую cards с опертором spread
 }
 
-initialRender();
+renderInitialCards();
 
