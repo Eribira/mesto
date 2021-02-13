@@ -51,8 +51,6 @@
 
 /* Блок edit-popup */
 @import url("../blocks/edit-popup/edit-popup.css");
-/* Модификатор popup_opened */
-@import url("../blocks/edit-popup/_opened/edit-popup_opened.css");
 /* Элемент __contaner */
 @import url("../blocks/edit-popup/__contaner/edit-popup__contaner.css");
 /* Элемент __text*/
@@ -68,10 +66,6 @@
 
 /* Блок add-popup */
 @import url("../blocks/add-popup/add-popup.css");
-/* Модификатор popup_opened */
-@import url("../blocks/add-popup/_opened/add-popup_opened.css");
-/* Блок add-popup */
-@import url("../blocks/add-popup/_opened/add-popup_opened.css");
 /* Элемент __contaner */
 @import url("../blocks/add-popup/__contaner/add-popup__contaner.css");
 /* Элемент __text*/
@@ -87,8 +81,6 @@
 
 /* Блок photo-popup */
 @import url("../blocks/photo-popup/photo-popup.css");
-/* Модификатор popup_opened */
-@import url("../blocks/photo-popup/_opened/photo-popup_opened.css");
 /* Элемент __contaner */
 @import url("../blocks/photo-popup/__contaner/photo-popup__contaner.css");
 /*  */
@@ -97,3 +89,12 @@
 @import url("../blocks/photo-popup/__title/photo-popup__title.css");
 /* Элемент __close-button*/
 @import url("../blocks/photo-popup/__close-button/photo-popup__close-button.css");
+
+/* Модификатор popup_opened */
+@import url('../blocks/popup/_opened/popup_opened.css');
+
+/*
+@import url("../blocks/edit-popup/_opened/edit-popup_opened.css");
+@import url("../blocks/add-popup/_opened/add-popup_opened.css");
+@import url("../blocks/photo-popup/_opened/photo-popup_opened.css"); */
+

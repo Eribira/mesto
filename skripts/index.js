@@ -37,6 +37,16 @@ const initialCards = [ // Массив с объектами для карточ
 // Function для нее же
 // Связанные обработчики
 
+// Универсальная функция для открытия попапов
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+}
+
+// Универсальная функция для закрытия попапов
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
 // EDIT POPUP
 // Popup elements
 const editPopupEl = document.querySelector('.edit-popup'); // Popup
@@ -53,7 +63,7 @@ const profileCaptureEl = document.querySelector('.profile__capture');
 
 // Open popup
 function openEditPopup() {
-  editPopupEl.classList.add('edit-popup_opened'); // Метод classList.add добавляет модификатор, раскрывая оверлей с попапом
+  openPopup(editPopupEl);
   nameInputEl.value = profileNameEl.textContent;
   captureInputEl.value = profileCaptureEl.textContent; // Эти две строки передают исходный текст с открывшуюся форму
 }
@@ -65,18 +75,13 @@ function editSubmitHandler(evt) {
   profileNameEl.textContent = nameInputEl.value; // value для input - это содерживое строки ввода
   profileCaptureEl.textContent = captureInputEl.value; // При помощи textContent перезаписывается на страницу то что сейчас введено в input
 
-  closeEditPopup()
+  closePopup(editPopupEl);
   }
-
-// Close popup
-function closeEditPopup() {
-  editPopupEl.classList.remove('edit-popup_opened');
-}
 
 // EventListener
 editButtonEl.addEventListener('click', openEditPopup); // For open
 editFormEl.addEventListener('submit', editSubmitHandler); // For edit submit
-closeEditPopupEl.addEventListener('click', closeEditPopup); // For close
+closeEditPopupEl.addEventListener('click', () => {closePopup(editPopupEl)}); // For close
 
 // ADD POPUP
 // Popup Element
@@ -86,19 +91,9 @@ const addFormEl = document.querySelector('.add-popup__contaner'); // Add form El
 
 const addButtonEl = document.querySelector('.profile__add-button'); // Open button
 
-// Open popup
-function openAddPopup() {
-  addPopupEl.classList.add('add-popup_opened');
-}
-
-// Close popup
-function closeAddPopup() {
-  addPopupEl.classList.remove('add-popup_opened');
-}
-
 // EventListener
-addButtonEl.addEventListener('click', openAddPopup); // Open
-closeAddPopupEl.addEventListener('click', closeAddPopup); // Close
+addButtonEl.addEventListener('click', () => {openPopup(addPopupEl)}); // Open
+closeAddPopupEl.addEventListener('click', () => {closePopup(addPopupEl)}); // Close
 
 // PHOTO VIEW POPUP
 // Popup
@@ -113,18 +108,13 @@ function openPhoto(event) {
   const targetContaner = event.target.closest('.elements__item');
   const targetTitle = targetContaner.querySelector('.elements__text');
 
-  photoPopupEl.classList.add('photo-popup_opened');
+  openPopup(photoPopupEl);
   photoEl.src = targetEl.src;
   photoTitleEl.textContent = targetTitle.textContent;
 }
 
-// Close view
-function closePhoto() {
-  photoPopupEl.classList.remove('photo-popup_opened');
-}
-
 // EventListener
-closePhotoPopupEl.addEventListener('click', closePhoto);
+closePhotoPopupEl.addEventListener('click', () => {closePopup(photoPopupEl)});
 
 // GET, ADD AND DELETE CARDS
 
