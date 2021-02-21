@@ -90,6 +90,10 @@
 /* Элемент __close-button*/
 @import url("../blocks/photo-popup/__close-button/photo-popup__close-button.css");
 
+/* Элемент popup__error */
+@import url("../blocks/popup/__error/popup__error.css");
+/* Модификатор error_visible */
+@import url("../blocks/popup/__error/_visible/popup__error_visible.css");
 /* Модификатор popup_opened */
 @import url('../blocks/popup/_opened/popup_opened.css');
 

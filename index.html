@@ -39,13 +39,25 @@
   <!-- Секции для попапов -->
   <!-- Попап редактирования профиля -->
   <section class="popup edit-popup">
-    <form action="input" class="edit-popup__contaner" name="profile-info">
+    <form action="input" class="popup__form edit-popup__contaner" name="profile-info" novalidate>
       <h2 class="edit-popup__text">
         Редактировать профиль
       </h2>
-      <fieldset class="edit-popup__fieldset">
-        <input type="text" class="edit-popup__input edit-popup__input_item_name" placeholder="Ваше Имя"> 
-        <input type="text" class="edit-popup__input edit-popup__input_item_capture" placeholder="Род деятельности">
+      <fieldset class="popup__fieldset edit-popup__fieldset">
+        <input type="text" class="popup__input edit-popup__input edit-popup__input_item_name" 
+        placeholder="Ваше Имя"
+        required
+        minlength="2"
+        maxlength="40">
+        <span class="popup__error"></span>
+      </fieldset>
+      <fieldset class="popup__fieldset edit-popup__fieldset">
+        <input type="text" class="popup__input edit-popup__input edit-popup__input_item_capture" 
+        placeholder="Род деятельности"
+        required
+        minlength="2"
+        maxlength="200">
+        <span class="popup__error"></span>
       </fieldset>
       <button type="submit" aria-label="save" class="edit-popup__submit-button">Сохранить</button>
       <button type="reset" aria-label="close" class="edit-popup__close-button"></button>
@@ -53,13 +65,22 @@
   </section>
   <!-- Попап добавления новой карточки -->
   <section class="popup add-popup">
-    <form action="input" class="add-popup__contaner" name="new-place">
+    <form action="input" class="popup__form add-popup__contaner" name="new-place" novalidate>
       <h2 class="add-popup__text">
         Новое место
       </h2>
-      <fieldset class="add-popup__fieldset">
-        <input type="text" class="add-popup__input add-popup__input_item_place-name" placeholder="Название"> 
-        <input type="text" class="add-popup__input add-popup__input_item_place-photo-link" placeholder="Ссылка на картинку">
+      <fieldset class="popup__fieldset add-popup__fieldset">
+        <input type="text" class="popup__input add-popup__input add-popup__input_item_place-name"
+        placeholder="Название"
+        required
+        >
+        <span class="popup__error"></span>
+      </fieldset>
+      <fieldset class="popup__fieldset add-popup__fieldset">
+        <input type="url" class="popup__input add-popup__input add-popup__input_item_place-photo-link"
+        placeholder="Ссылка на картинку"
+        required>
+        <span class="popup__error"></span>
       </fieldset>
       <button type="submit" aria-label="save" class="add-popup__submit-button">Сохранить</button>
       <button type="reset" aria-label="close" class="add-popup__close-button"></button>
@@ -87,6 +108,7 @@
   </template>
 
 <script src="./scripts/initial-сards.js"></script>
+<script src="./scripts/validate.js"></script>
 <script src="./scripts/index.js"></script>
 </body>
 </html>
