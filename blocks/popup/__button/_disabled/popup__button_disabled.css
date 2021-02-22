@@ -3,4 +3,5 @@
   background-color: #fff;
   color: #000;
   border: solid 1px #000;
+  pointer-events: none;
 }

@@ -13,21 +13,29 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
 
-function setOverlayClose(popup) {
-  popup.addEventListener('click', () => {
-    closePopup(popup);
+function setAltClose(popup) {
+  popup.addEventListener('click', (event) => {
+    if (event.target === popup) {
+      closePopup(popup);
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closePopup(popup);
+    };
+    // console.log(event);
   });
 };
 
-function enableOverlayClose() {
+function enableAltClose() {
   const popupList = Array.from(document.querySelectorAll(".popup"));
 
   popupList.forEach((popup) => {
-    setOverlayClose(popup);
+    setAltClose(popup);
   })
 };
 
-enableOverlayClose();
+enableAltClose();
 
 // EDIT POPUP
 // Popup elements
