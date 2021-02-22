@@ -11,7 +11,7 @@ const hideInputError = (inputElement) => {
   const formSectionElement = inputElement.closest(".popup__fieldset");
   const errorElement = formSectionElement.querySelector(".popup__error");
 
-  errorElement.textContent = "";
+  errorElement.textContent = " ";
   errorElement.classList.remove("popup__error_visible");
 };
 
@@ -38,8 +38,6 @@ const toggleButtonState = (buttonElement, inputList) => {
     buttonElement.classList.remove("popup__button_disabled");
   }
 };
-
-
 
 const setEventListeners = (formSelector, inputSelector) => {
   const handleFormSubmit = (event) => {

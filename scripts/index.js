@@ -6,12 +6,28 @@
 // Универсальная функция для открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-}
+};
 
 // Универсальная функция для закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-}
+};
+
+function setOverlayClose(popup) {
+  popup.addEventListener('click', () => {
+    closePopup(popup);
+  });
+};
+
+function enableOverlayClose() {
+  const popupList = Array.from(document.querySelectorAll(".popup"));
+
+  popupList.forEach((popup) => {
+    setOverlayClose(popup);
+  })
+};
+
+enableOverlayClose();
 
 // EDIT POPUP
 // Popup elements
@@ -32,7 +48,7 @@ function openEditPopup() {
   openPopup(editPopupEl);
   nameInputEl.value = profileNameEl.textContent;
   captureInputEl.value = profileCaptureEl.textContent; // Эти две строки передают исходный текст с открывшуюся форму
-}
+};
 
 // Edit submit
 function editSubmitHandler(evt) {
@@ -42,7 +58,7 @@ function editSubmitHandler(evt) {
   profileCaptureEl.textContent = captureInputEl.value; // При помощи textContent перезаписывается на страницу то что сейчас введено в input
 
   closePopup(editPopupEl);
-  }
+};
 
 // EventListener
 editButtonEl.addEventListener('click', openEditPopup); // For open
@@ -77,7 +93,7 @@ function openPhoto(event) {
   openPopup(photoPopupEl);
   photoEl.src = targetEl.src;
   photoTitleEl.textContent = targetTitle.textContent;
-}
+};
 
 // EventListener
 closePhotoPopupEl.addEventListener('click', () => {closePopup(photoPopupEl)});
@@ -114,7 +130,7 @@ function createCard(card) { // Создает карточку
   cardImg.alt = card.alt;
 
   return newCard; // Функция используется в методе .map, которому нужно возвращать элемент
-}
+};
 
 // Handle add
 function handleAddCard(event) {
@@ -127,7 +143,7 @@ function handleAddCard(event) {
   newPlaceNameEl.value = '';
   newPlaceLinkEl.value = ''; // Очистил значения строк ввода
   closeAddPopup();
-}
+};
 
 // Delete
 function deleteCard(event) {
@@ -135,7 +151,7 @@ function deleteCard(event) {
   const targetItem = targetEl.closest('.elements__item');
 
   targetItem.remove();
-}
+};
 
 // EventListener
 addFormEl.addEventListener('submit', handleAddCard);
@@ -144,14 +160,14 @@ addFormEl.addEventListener('submit', handleAddCard);
 function likePhoto(event) {
   const targetEl = event.target;
   targetEl.classList.toggle('elements__like-button_active');
-}
+};
 
 function renderInitialCards() {
   const cards = initialCards // Объявил элемент cards, в который будут записываться данные после ремапа
       .map(createCard);
 
   cardsContanerEl.append(...cards); // И в метод append в качестве аргумента использую cards с опертором spread
-}
+};
 
 renderInitialCards();
 
