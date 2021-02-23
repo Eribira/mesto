@@ -7,37 +7,49 @@
 // Универсальная функция для открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
 };
 
 // Универсальная функция для закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEsc);
 };
 
-// Закрытие попапов по клику на оверлей и кнопокй ESC
-function setAltClose(popup) {
-  popup.addEventListener('mousedown', (event) => {
+// Закрытие попапов по клику на оверлей
+function setOverlayClose(popup) { // Навешиваем обработчики на наши оверлеи
+  popup.addEventListener('mousedown', (event) => { // mousedown срабатывает при нажатии, когда ckick только после нажатия и возврата ЛКМ в исходное положение
     if (event.target === popup) {
       closePopup(popup);
     }
   });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closePopup(popup);
-    };
-    // console.log(event);
-  });
+  // document.addEventListener('keydown', (event) => {
+  //   if (event.key === 'Escape') {
+  //     closePopup(popup);
+  //   };
+  //   // console.log(event);
+  // });
 };
 
-function enableAltClose() {
+function enableAltClose() { // Собираем список оверлеев и проходимся по ним функцией setOverlayClose
   const popupList = Array.from(document.querySelectorAll(".popup"));
 
   popupList.forEach((popup) => {
-    setAltClose(popup);
+    setOverlayClose(popup);
   })
 };
 
 enableAltClose();
+
+// Закрытие попапов при нажатии ESC
+const ESC_CODE = 'Escape';
+
+function closeByEsc(event) {
+  if (event.key === ESC_CODE) {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
 
 // EDIT POPUP
 // Popup elements
