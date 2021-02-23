@@ -1,7 +1,8 @@
 // Код сгруппирован по принципу:
-// Dom элементы и const для фичи
-// Function для нее же
-// Связанные обработчики
+// Dom элементы и const для фичи =>
+// Function для нее же =>
+// Связанные обработчики =>
+// Следующая фича
 
 // Универсальная функция для открытия попапов
 function openPopup(popup) {
@@ -13,8 +14,9 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
 
+// Закрытие попапов по клику на оверлей и кнопокй ESC
 function setAltClose(popup) {
-  popup.addEventListener('click', (event) => {
+  popup.addEventListener('mousedown', (event) => {
     if (event.target === popup) {
       closePopup(popup);
     }
@@ -129,8 +131,8 @@ function createCard(card) { // Создает карточку
   const openPhotoEl = newCard.querySelector('.elements__photo'); // Img Element on card
   openPhotoEl.addEventListener('click', openPhoto);
 
-  const LikeEl = newCard.querySelector('.elements__like-button'); // Like button on card
-  LikeEl.addEventListener('click', likePhoto);
+  const likeEl = newCard.querySelector('.elements__like-button'); // Like button on card
+  likeEl.addEventListener('click', likePhoto);
 
   // Заполняю контентом новую карточку, используя ключи, как в объекте массива.
   cardTitle.textContent = card.name;
@@ -146,12 +148,17 @@ function handleAddCard(event) {
   const inputTitle = newPlaceNameEl.value;
   const inputImg = newPlaceLinkEl.value;
   const cardItem = createCard({name: inputTitle, link: inputImg, alt: inputTitle}); // Передаю функции createCard объект с ключами, которые распознает функция
+  const inputList = Array.from(document.querySelectorAll('.add-popup__input'));
+  const subbmitButton = document.querySelector('.add-popup__submit-button');
+
+  // console.log(subbmitButton);
 
   cardsContanerEl.prepend(cardItem);
   newPlaceNameEl.value = '';
   newPlaceLinkEl.value = ''; // Очистил значения строк ввода
-  closeAddPopup();
-};
+  closePopup(addPopupEl);
+  toggleButtonState(subbmitButton, inputList); // Чтобы проверить валидность кнопки после сабмита. Объявил элементы, которые необходимо передать в функц toggleButState и передал их здесь.
+}; // Если бы я просто деактировал кнопку, то п осути продуюлировал бы код, который уже есть в другой функции.
 
 // Delete
 function deleteCard(event) {
