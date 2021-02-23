@@ -61,7 +61,7 @@ const setEventListeners = (formSelector, inputSelector) => {
 
 const enableValidation = ({ formSelector, inputSelector }) => {
   const formElements = document.querySelectorAll(formSelector);
-  const formList = Array.from(formElements); // Создали список всех форм и прошлись навесили на них обработчики
+  const formList = Array.from(formElements); // Создали список всех форм и навесили на них обработчики
 
   formList.forEach((formElement) => {
     setEventListeners(formElement, inputSelector);

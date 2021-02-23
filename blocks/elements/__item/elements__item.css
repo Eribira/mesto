@@ -1,3 +1,7 @@
+.elements__item:hover {
+  transform: scale(1.08);
+}
+
 .elements__item {
   width: 100%;
   overflow: hidden;
@@ -6,4 +10,5 @@
   flex-direction: column;
   border-radius: 10px;
   position: relative;
+  transition: transform 0.5s linear;
 }
