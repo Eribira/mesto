@@ -155,13 +155,16 @@ function createCard(card) { // Создает карточку
 };
 
 // Handle add
+// HTML елементы для деактивации сабмита после ручного добавления карточки
+const addInputList = Array.from(document.querySelectorAll('.add-popup__input')); // Список инпутов формы add
+const addSubbmitButton = document.querySelector('.add-popup__submit-button'); // Кнопка сабмита формы add
+
+// Функция добавления карточки пользователем
 function handleAddCard(event) {
   event.preventDefault();
   const inputTitle = newPlaceNameEl.value;
   const inputImg = newPlaceLinkEl.value;
   const cardItem = createCard({name: inputTitle, link: inputImg, alt: inputTitle}); // Передаю функции createCard объект с ключами, которые распознает функция
-  const inputList = Array.from(document.querySelectorAll('.add-popup__input'));
-  const subbmitButton = document.querySelector('.add-popup__submit-button');
 
   // console.log(subbmitButton);
 
@@ -169,8 +172,8 @@ function handleAddCard(event) {
   newPlaceNameEl.value = '';
   newPlaceLinkEl.value = ''; // Очистил значения строк ввода
   closePopup(addPopupEl);
-  toggleButtonState(subbmitButton, inputList); // Чтобы проверить валидность кнопки после сабмита. Объявил элементы, которые необходимо передать в функц toggleButState и передал их здесь.
-}; // Если бы я просто деактировал кнопку, то п осути продуюлировал бы код, который уже есть в другой функции.
+  toggleButtonState(addSubbmitButton, addInputList);
+};
 
 // Delete
 function deleteCard(event) {

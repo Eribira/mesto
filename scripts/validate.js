@@ -1,18 +1,33 @@
+const config = {
+  formSelector: '.popup__form',
+  formSectionSelector: '.popup__fieldset',
+  inputSelector: '.popup__input',
+  errorMessegeSelector: '.popup__error',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+};
+// Далее вместо селекторов я обращаюсь к obj.name, что позволит один раз сменить селектор внутри объекта и легко переиспользовать код
+// Возможно такой объект тоже стоит вынести в отдельный файл с данными
+
 const showInputError = (inputElement, errorMessage) => {
   // console.log(inputElement, errorMessage);
-  const formSectionElement = inputElement.closest(".popup__fieldset"); // Нахожу нужную форму
-  const errorElement = formSectionElement.querySelector(".popup__error"); // Нахожу нужный span
+  const formSectionElement = inputElement.closest(config.formSectionSelector); // Нахожу нужную форму
+  const errorElement = formSectionElement.querySelector(config.errorMessegeSelector); // Нахожу нужный span
+
+  // console.log(formSectionElement);
 
   errorElement.textContent = errorMessage;
-  errorElement.classList.add("popup__error_visible");
+  errorElement.classList.add(config.errorClass);
 };
 
 const hideInputError = (inputElement) => {
-  const formSectionElement = inputElement.closest(".popup__fieldset"); // Нахожу нужную форму
-  const errorElement = formSectionElement.querySelector(".popup__error"); // Нахожу нужный span
+  const formSectionElement = inputElement.closest(config.formSectionSelector); // Нахожу нужную форму
+  const errorElement = formSectionElement.querySelector(config.errorMessegeSelector); // Нахожу нужный span
 
   errorElement.textContent = " "; // Хорошая практика - очищать поля и значения, когда они больше не нужны
-  errorElement.classList.remove("popup__error_visible");
+  errorElement.classList.remove(config.errorClass);
 };
 
 const checkInputValidity = (inputElement) => {
@@ -32,10 +47,10 @@ const toggleButtonState = (buttonElement, inputList) => {
 
   if (hasNotValidInput) {
     buttonElement.setAttribute("disabled", true);
-    buttonElement.classList.add("popup__button_disabled");
+    buttonElement.classList.add(config.inactiveButtonClass);
   } else {
     buttonElement.removeAttribute("disabled");
-    buttonElement.classList.remove("popup__button_disabled");
+    buttonElement.classList.remove(config.inactiveButtonClass);
   }
 };
 
@@ -46,7 +61,7 @@ const setEventListeners = (formSelector, inputSelector) => {
   formSelector.addEventListener("submit", handleFormSubmit); // Вешаем отмену отправки форм на сервер
 
   const inputList = Array.from(formSelector.querySelectorAll(inputSelector));
-  const buttonElement = formSelector.querySelector(".popup__button"); // Сделали список всех инпутов внутри формы
+  const buttonElement = formSelector.querySelector(config.submitButtonSelector); // Сделали список всех инпутов внутри формы
   // console.log(buttonElement);
 
   inputList.forEach(inputElement => {
@@ -59,20 +74,13 @@ const setEventListeners = (formSelector, inputSelector) => {
   toggleButtonState (buttonElement, inputList); // Проверка статуса кнопок при инициализации
 };
 
-const enableValidation = ({ formSelector, inputSelector }) => {
-  const formElements = document.querySelectorAll(formSelector);
+const enableValidation = (config) => {
+  const formElements = document.querySelectorAll(config.formSelector);
   const formList = Array.from(formElements); // Создали список всех форм и навесили на них обработчики
 
   formList.forEach((formElement) => {
-    setEventListeners(formElement, inputSelector);
+    setEventListeners(formElement, config.inputSelector);
   });
 };
 
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-});
+enableValidation(config);
