@@ -58,16 +58,16 @@ const toggleButtonState = (buttonElement, inputList, config) => {
   }
 };
 
-const setEventListeners = (formSelector, inputSelector, config) => {
+const setEventListeners = (formElement, config) => {
   // console.log(config);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
   };
-  formSelector.addEventListener("submit", handleFormSubmit); // Вешаем отмену отправки форм на сервер
+  formElement.addEventListener("submit", handleFormSubmit); // Вешаем отмену отправки форм на сервер
 
-  const inputList = Array.from(formSelector.querySelectorAll(inputSelector));
-  const buttonElement = formSelector.querySelector(config.submitButtonSelector); // Сделали список всех инпутов внутри формы
+  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const buttonElement = formElement.querySelector(config.submitButtonSelector); // Сделали список всех инпутов внутри формы
   // console.log(buttonElement);
   
   inputList.forEach(inputElement => {
@@ -87,7 +87,7 @@ const enableValidation = (config) => {
   // console.log(config);
 
   formList.forEach((formElement) => {
-    setEventListeners(formElement, config.inputSelector, config);
+    setEventListeners(formElement, config);
   });
 };
 
